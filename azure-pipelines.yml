@@ -1,0 +1,13 @@
+trigger:
+- master
+- v1.x
+- azure-pipelines
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'run'
+    workingDirectory: '.\build'
