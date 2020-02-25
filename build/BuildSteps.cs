@@ -39,7 +39,7 @@ namespace Build
         public static void BuildExtensionsProject()
         {
             var feeds = Settings.nugetFeed.Aggregate(string.Empty, (a, b) => $"{a} --source {b}");
-            Shell.Run("dotnet", $"build {Settings.OutputProjectFile} -o {Settings.OutputBinDirectory}");
+            Shell.Run("dotnet", $"publish {Settings.OutputProjectFile} -o {Settings.OutputBinDirectory}");
         }
 
         public static void AddPackages()
